@@ -33,7 +33,7 @@ function setup(){
     createCanvas(400,700);
     umbrella = new Umbrella(200,500);
 
-    //create drops
+    //criando gotas
    
     
 }
@@ -42,7 +42,7 @@ function draw(){
     Engine.update(engine);
     background(0); 
 
-    //creating thunder
+    //criando trovão
     rand = Math.round(random(1,4));
     if(frameCount%80===0){
         thunderCreatedFrame=frameCount;
@@ -79,7 +79,7 @@ function draw(){
 
     umbrella.display();
 
-    //display rain drops
+    //exibindo gotas de chuva
    
 
     drawSprites();
