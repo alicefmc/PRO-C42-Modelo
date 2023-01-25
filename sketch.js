@@ -1,10 +1,12 @@
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
+const Body = Matter.Body;
 var thunder, thunder1,thunder2,thunder3,thunder4;
 var batAnimation,bat;
 
-
+var maxDrops=200;
+var drops = [];
 var engine, world;
 
 var rand;
@@ -34,7 +36,9 @@ function setup(){
     umbrella = new Umbrella(200,500);
 
     //criando gotas
-   
+   for(var i=0; i<maxDrops; i++){
+        drops.push(new Drop(random(0,400), random(0,900)));
+   }
     
 }
 
@@ -80,7 +84,10 @@ function draw(){
     umbrella.display();
 
     //exibindo gotas de chuva
-   
+    for(var i=0; i<maxDrops; i++){
+        drops[i].display();
+        drops[i].updateDrop();
+   }
 
     drawSprites();
 }   
